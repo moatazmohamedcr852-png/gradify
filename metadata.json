@@ -1,0 +1,6 @@
+{
+  "name": "Gradify - Academic Companion",
+  "description": "Portfolio and landing page for Gradify: the all-in-one academic companion for university students with GPA tracking, academic planner, goal engine, semester analytics, widgets, and resource hub.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
