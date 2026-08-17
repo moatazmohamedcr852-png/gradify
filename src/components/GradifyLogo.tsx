@@ -16,12 +16,12 @@ export const GradifyLogo: React.FC<GradifyLogoProps> = ({
   badgeText,
 }) => {
   const sizeMap = {
-    sm: { icon: 28, text: 'text-lg', cap: 10 },
-    md: { icon: 38, text: 'text-2xl', cap: 14 },
-    lg: { icon: 52, text: 'text-3xl', cap: 18 },
-    xl: { icon: 72, text: 'text-4xl', cap: 24 },
-    '2xl': { icon: 96, text: 'text-5xl', cap: 32 },
-    hero: { icon: 130, text: 'text-6xl', cap: 42 },
+    sm: { icon: 40, text: 'text-lg', cap: 10 },
+    md: { icon: 52, text: 'text-2xl', cap: 14 },
+    lg: { icon: 72, text: 'text-3xl', cap: 18 },
+    xl: { icon: 96, text: 'text-4xl', cap: 24 },
+    '2xl': { icon: 128, text: 'text-5xl', cap: 32 },
+    hero: { icon: 170, text: 'text-6xl', cap: 42 },
   };
 
   const currentSize = sizeMap[size];
@@ -41,7 +41,7 @@ export const GradifyLogo: React.FC<GradifyLogoProps> = ({
             alt="Gradify Logo"
             width={currentSize.icon}
             height={currentSize.icon}
-            className="relative z-10 transition-transform duration-300 group-hover:scale-105"
+            className="relative z-10 scale-[1.3] transition-transform duration-300 group-hover:scale-[1.4]"
           />
       </div>
 
