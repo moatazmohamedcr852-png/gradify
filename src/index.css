@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* 
+  Make all animations and transitions exceptionally smooth globally 
+  using a custom easing function (Expo Out) and extended duration.
+*/
+.transition, .transition-all, .transition-colors, .transition-opacity, .transition-transform, .transition-shadow, [class*="transition-"] {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-duration: 600ms !important;
+}
+
+/* Snappy press effect */
+.active\:scale-95:active {
+  transform: scale(0.97) !important;
+  transition-duration: 150ms !important;
+}
+
 @layer utilities {
   .bg-grid-pattern {
     background-size: 40px 40px;
