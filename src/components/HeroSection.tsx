@@ -12,7 +12,9 @@ import {
   Users,
   CheckCircle2,
   TrendingUp,
-  Award
+  Award,
+  Apple,
+  Smartphone
 } from 'lucide-react';
 import { GradifyLogo } from './GradifyLogo';
 import { InteractiveAppMockup } from './InteractiveAppMockup';
@@ -71,15 +73,37 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuickGpa, onOpen
 
             {/* Quick Action buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-              <button
-                id="hero-get-started-btn"
-                onClick={onOpenDownload}
-                className="relative group px-7 py-3.5 rounded-2xl text-sm font-bold text-[#0B1020] dark:text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-[#4F8CFF] hover:via-purple-500 hover:to-pink-500 shadow-xl shadow-purple-600/30 active:scale-95 transition-all duration-200 flex items-center gap-2.5"
+              <a
+                href="https://apps.apple.com/pk/app/gradify-eg/id6789565780"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group px-6 py-3.5 rounded-2xl text-sm font-bold text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-200 dark:border-white/10 shadow-xl active:scale-95 transition-all duration-200 flex items-center gap-2.5"
               >
-                <Download className="w-4 h-4" />
-                <span>Get Gradify Free</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+                <Apple className="w-5 h-5" />
+                <div className="text-left leading-tight">
+                  <div className="text-[10px] font-medium text-zinc-400">Download on the</div>
+                  <div>App Store</div>
+                </div>
+              </a>
+
+              <a
+                href="#"
+                onClick={(e) => {
+                  if (e.currentTarget.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('Google Play link coming soon!');
+                  }
+                }}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group px-6 py-3.5 rounded-2xl text-sm font-bold text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-200 dark:border-white/10 shadow-xl active:scale-95 transition-all duration-200 flex items-center gap-2.5"
+              >
+                <Smartphone className="w-5 h-5 text-emerald-400" />
+                <div className="text-left leading-tight">
+                  <div className="text-[10px] font-medium text-zinc-400">Get it on</div>
+                  <div>Google Play</div>
+                </div>
+              </a>
 
               <button
                 id="hero-live-calc-btn"

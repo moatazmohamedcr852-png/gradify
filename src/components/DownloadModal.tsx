@@ -36,39 +36,45 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
           </p>
         </div>
 
-        {/* Platform Buttons */}
+        {/* Platform Links */}
         <div className="space-y-3 pt-2">
-          <button
-            onClick={() => {
-              alert('Gradify iOS client simulator: In a production App Store environment, this links to the TestFlight / App Store listing!');
-            }}
-            className="w-full py-3.5 px-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-200 dark:border-white/10 text-[#0B1020] dark:text-white font-semibold text-xs flex items-center justify-between group transition"
+          <a
+            href="https://apps.apple.com/pk/app/gradify-eg/id6789565780"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-3.5 px-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-200 dark:border-white/10 text-white font-semibold text-xs flex items-center justify-between group transition"
           >
             <div className="flex items-center gap-3">
-              <Apple className="w-5 h-5 text-zinc-800 dark:text-zinc-200" />
+              <Apple className="w-5 h-5 text-zinc-200" />
               <div className="text-left">
-                <div className="text-[10px] text-zinc-600 dark:text-zinc-400">Download on the</div>
-                <div className="text-xs font-bold text-[#0B1020] dark:text-white">Apple App Store</div>
+                <div className="text-[10px] text-zinc-400">Download on the</div>
+                <div className="text-xs font-bold text-white">Apple App Store</div>
               </div>
             </div>
             <span className="text-[11px] text-[#7C4DFF] group-hover:translate-x-0.5 transition-transform">iOS 16+ →</span>
-          </button>
+          </a>
 
-          <button
-            onClick={() => {
-              alert('Gradify Android client simulator: In a production environment, this opens Google Play Store listing!');
+          <a
+            href="#"
+            onClick={(e) => {
+              if (e.currentTarget.getAttribute('href') === '#') {
+                e.preventDefault();
+                alert('Google Play link coming soon!');
+              }
             }}
-            className="w-full py-3.5 px-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-200 dark:border-white/10 text-[#0B1020] dark:text-white font-semibold text-xs flex items-center justify-between group transition"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-3.5 px-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-200 dark:border-white/10 text-white font-semibold text-xs flex items-center justify-between group transition"
           >
             <div className="flex items-center gap-3">
               <Smartphone className="w-5 h-5 text-emerald-400" />
               <div className="text-left">
-                <div className="text-[10px] text-zinc-600 dark:text-zinc-400">Get it on</div>
-                <div className="text-xs font-bold text-[#0B1020] dark:text-white">Google Play Store</div>
+                <div className="text-[10px] text-zinc-400">Get it on</div>
+                <div className="text-xs font-bold text-white">Google Play Store</div>
               </div>
             </div>
             <span className="text-[11px] text-emerald-400 group-hover:translate-x-0.5 transition-transform">Android 12+ →</span>
-          </button>
+          </a>
         </div>
 
         {/* Features check */}

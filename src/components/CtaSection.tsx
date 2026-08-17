@@ -49,14 +49,37 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenQuickGpa, onOpenDo
 
           {/* Action buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <button
-              onClick={onOpenDownload}
-              className="px-8 py-4 rounded-2xl text-sm font-bold text-[#0B1020] dark:text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:opacity-95 shadow-xl shadow-purple-600/30 active:scale-95 transition flex items-center gap-2.5"
+            <a
+              href="https://apps.apple.com/pk/app/gradify-eg/id6789565780"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-4 rounded-2xl text-sm font-bold text-[#0B1020] bg-white hover:bg-zinc-100 shadow-xl active:scale-95 transition-all flex items-center gap-2.5"
             >
-              <Download className="w-4 h-4" />
-              <span>Download Gradify App Free</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              <Apple className="w-5 h-5" />
+              <div className="text-left leading-tight">
+                <div className="text-[10px] font-medium text-zinc-500">Download on the</div>
+                <div>App Store</div>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              onClick={(e) => {
+                if (e.currentTarget.getAttribute('href') === '#') {
+                  e.preventDefault();
+                  alert('Google Play link coming soon!');
+                }
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-4 rounded-2xl text-sm font-bold text-[#0B1020] bg-white hover:bg-zinc-100 shadow-xl active:scale-95 transition-all flex items-center gap-2.5"
+            >
+              <Smartphone className="w-5 h-5 text-emerald-500" />
+              <div className="text-left leading-tight">
+                <div className="text-[10px] font-medium text-zinc-500">Get it on</div>
+                <div>Google Play</div>
+              </div>
+            </a>
 
             <button
               onClick={onOpenQuickGpa}
