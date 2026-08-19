@@ -1,195 +1,90 @@
 import React from 'react';
-import { 
-  Sparkles, 
-  ArrowRight, 
-  Calculator, 
-  Calendar, 
-  Target, 
-  BarChart3, 
-  ShieldCheck, 
-  Download,
-  Star,
-  Users,
-  CheckCircle2,
-  TrendingUp,
-  Award,
-  Apple,
-  Smartphone
-} from 'lucide-react';
-import { GradifyLogo } from './GradifyLogo';
 import { InteractiveAppMockup } from './InteractiveAppMockup';
+import { Play, ArrowLeft, Star } from 'lucide-react';
 
-interface HeroSectionProps {
-  onOpenQuickGpa?: () => void;
-  onOpenDownload?: () => void;
-}
-
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuickGpa, onOpenDownload }) => {
+export const HeroSection: React.FC = () => {
   return (
     <section 
       id="hero-section" 
-      className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-white dark:bg-[#0B1020] bg-grid-pattern"
+      className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-[#0B0C10] bg-grid-pattern"
     >
       {/* Dynamic ambient gradient glow spheres */}
       <div 
         aria-hidden="true" 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-indigo-900/30 via-purple-900/25 to-pink-900/20 rounded-full blur-[120px] pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#6c35ff]/20 via-[#4F8CFF]/10 to-transparent rounded-full blur-[120px] pointer-events-none"
       />
       <div 
         aria-hidden="true" 
-        className="absolute top-1/3 -left-32 w-96 h-96 bg-cyan-900/20 rounded-full blur-[100px] pointer-events-none"
-      />
-      <div 
-        aria-hidden="true" 
-        className="absolute bottom-10 -right-32 w-96 h-96 bg-fuchsia-900/20 rounded-full blur-[100px] pointer-events-none"
+        className="absolute bottom-10 -left-32 w-96 h-96 bg-[#7C4DFF]/10 rounded-full blur-[100px] pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Hero Typography and Calls to Action */}
-          <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
-            {/* Top pill badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-[#7C4DFF]/30 backdrop-blur-md shadow-lg shadow-purple-500/5">
-              <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
-              <span className="text-xs font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300">
-                The New Standard in Academic Intelligence
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-8 justify-between">
+          
+          {/* Right Column (Visuals - Phone Mockup) */}
+          <div className="lg:w-5/12 flex justify-center lg:justify-end relative">
+            <InteractiveAppMockup />
+          </div>
+
+          {/* Left Column (Text Content) */}
+          <div className="lg:w-6/12 space-y-8 text-right rtl-text">
+            
+            {/* Student social proof banner */}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="flex -space-x-3 overflow-hidden">
+                <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#0B0C10] object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" alt="" />
+                <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#0B0C10] object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" alt="" />
+                <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#0B0C10] object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64" alt="" />
+                <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#0B0C10] object-cover" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=64&h=64" alt="" />
+              </div>
+              
+              <div className="flex items-center gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400" />
+                ))}
+              </div>
+              
+              <span className="text-sm text-zinc-300">
+                Gradify +10,000 طالب بيثقوا في رحلتهم مع
               </span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1020] dark:text-white leading-[1.15] font-['Space_Grotesk']">
-                Track your GPA, plan your semester, and{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
-                  stay on top of your academic journey
-                </span>{' '}
-                — all in one place.
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight font-['Cairo']">
+                متدخلش الجامعة <br />
+                <span className="text-[#6c35ff]">تايه.</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-300 max-w-2xl font-normal leading-relaxed">
-                <strong className="text-[#0B1020] dark:text-white font-semibold">Gradify</strong> is your all-in-one academic companion designed for university students. Calculate instant standing, orchestrate weekly deadlines, and hit your graduation goals with mathematical precision.
+              <h2 className="text-2xl sm:text-3xl font-semibold text-zinc-200">
+                معاك من أول يوم لحد التخرج.
+              </h2>
+
+              <p className="text-base sm:text-lg text-zinc-400 max-w-xl font-normal leading-relaxed">
+                نفهمك نظام وأعمال GPA والسنوات جامعتك، نتابع مستواك معاك شخصياً، 
+                ونساعدك تعرف إمتى إنذار لأزم تتحرك قبل ما درجاتك تضيع.
               </p>
             </div>
 
             {/* Quick Action buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-              <a
-                href="https://apps.apple.com/pk/app/gradify-eg/id6789565780"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group px-6 py-3.5 rounded-2xl text-sm font-bold text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-200 dark:border-white/10 shadow-xl active:scale-95 transition-all duration-200 flex items-center gap-2.5"
+            <div className="flex flex-wrap items-center gap-4 pt-4">
+              <button
+                className="group px-8 py-4 rounded-xl text-lg font-bold text-white bg-[#6c35ff] hover:opacity-95 shadow-lg shadow-[#6c35ff]/30 active:scale-95 transition-all duration-200 flex items-center gap-2"
               >
-                <Apple className="w-5 h-5" />
-                <div className="text-left leading-tight">
-                  <div className="text-[10px] font-medium text-zinc-400">Download on the</div>
-                  <div>App Store</div>
-                </div>
-              </a>
-
-              <a
-                href="#"
-                onClick={(e) => {
-                  if (e.currentTarget.getAttribute('href') === '#') {
-                    e.preventDefault();
-                    alert('Google Play link coming soon!');
-                  }
-                }}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group px-6 py-3.5 rounded-2xl text-sm font-bold text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-200 dark:border-white/10 shadow-xl active:scale-95 transition-all duration-200 flex items-center gap-2.5"
-              >
-                <Smartphone className="w-5 h-5 text-emerald-400" />
-                <div className="text-left leading-tight">
-                  <div className="text-[10px] font-medium text-zinc-400">Get it on</div>
-                  <div>Google Play</div>
-                </div>
-              </a>
+                <span>ابدأ رحلتك مع Gradify</span>
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+              </button>
 
               <button
-                id="hero-live-calc-btn"
-                onClick={onOpenQuickGpa}
-                className="px-6 py-3.5 rounded-2xl text-sm font-semibold text-zinc-800 dark:text-zinc-200 bg-white/[0.05] hover:bg-white/[0.1] border border-zinc-200 dark:border-white/10 hover:border-white/20 active:scale-95 transition-all duration-200 flex items-center gap-2 shadow-sm backdrop-blur-md"
+                className="px-8 py-4 rounded-xl text-lg font-semibold text-zinc-200 hover:text-white hover:bg-white/[0.05] border border-zinc-700/50 hover:border-zinc-500 active:scale-95 transition-all duration-200 flex items-center gap-3"
               >
-                <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span>Launch Interactive Demo</span>
+                <div className="p-1 rounded-full border border-zinc-500">
+                  <Play className="w-3 h-3 fill-current" />
+                </div>
+                <span>اعرف إزاي Gradify هيساعدني</span>
               </button>
             </div>
-
-            {/* Student social proof & universities banner */}
-            <div className="pt-6 border-t border-zinc-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
-              {/* Rating */}
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2 overflow-hidden">
-                  {['🎓', '📚', '⚡', '🌟'].map((emoji, i) => (
-                    <div
-                      key={i}
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800 border-2 border-[#070709] text-xs font-bold shadow"
-                    >
-                      {emoji}
-                    </div>
-                  ))}
-                </div>
-                <div className="text-left text-xs">
-                  <div className="flex items-center text-amber-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                    ))}
-                    <span className="font-bold text-[#0B1020] dark:text-white ml-1.5">4.9 / 5.0</span>
-                  </div>
-                  <span className="text-zinc-600 dark:text-zinc-400">Trusted by 65,000+ university scholars</span>
-                </div>
-              </div>
-
-              {/* Verified Features mini checklist */}
-              <div className="hidden sm:flex items-center gap-4 text-xs text-zinc-600 dark:text-zinc-400">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  Instant 4.0 & 4.33 Scale
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                  Home Widgets
-                </span>
-              </div>
-            </div>
           </div>
-
-          {/* Right Column: Live Interactive Device Preview */}
-          <div className="lg:col-span-5 flex justify-center">
-            <InteractiveAppMockup />
-          </div>
-        </div>
-
-        {/* Feature quick ribbon */}
-        <div className="mt-20 pt-8 border-t border-zinc-200 dark:border-white/10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {[
-            { title: 'GPA Tracker', desc: 'Real-time calculation', icon: Calculator, href: '#gpa-tracker', color: 'text-[#4F8CFF]' },
-            { title: 'Academic Planner', desc: 'Smart weekly deadlines', icon: Calendar, href: '#planner', color: 'text-cyan-400' },
-            { title: 'Goal Engine', desc: 'Target grade solver', icon: Target, href: '#goal-engine', color: 'text-pink-400' },
-            { title: 'Semester Overview', desc: 'Trend analytics & charts', icon: BarChart3, href: '#semester-overview', color: 'text-[#7C4DFF]' },
-            { title: 'Home Widgets', desc: 'Lock & home screen glances', icon: Award, href: '#widgets', color: 'text-amber-400' },
-            { title: 'Resource Hub', desc: 'Curated study blueprints', icon: Sparkles, href: '#resource-hub', color: 'text-emerald-400' },
-          ].map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <a
-                key={idx}
-                href={item.href}
-                className="group p-3.5 rounded-2xl bg-white/[0.02] hover:bg-white/[0.06] border border-zinc-200 dark:border-white/5 hover:border-[#7C4DFF]/30 transition-all duration-200 flex flex-col justify-between"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className={`p-2 rounded-xl bg-black/5 dark:bg-white/5 ${item.color} group-hover:scale-110 transition-transform`}>
-                    <Icon className="w-4 h-4" />
-                  </div>
-                  <ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-[#0B1020] dark:text-white group-hover:translate-x-0.5 transition-all" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-[#0B1020] dark:text-white group-hover:text-purple-200 transition-colors">{item.title}</div>
-                  <div className="text-[11px] text-zinc-600 dark:text-zinc-400">{item.desc}</div>
-                </div>
-              </a>
-            );
-          })}
         </div>
       </div>
     </section>

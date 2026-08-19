@@ -1,79 +1,38 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
-import { GpaTrackerSection } from './components/GpaTrackerSection';
-import { AcademicPlannerSection } from './components/AcademicPlannerSection';
-import { GoalEngineSection } from './components/GoalEngineSection';
-import { SemesterOverviewSection } from './components/SemesterOverviewSection';
-import { HomeWidgetsSection } from './components/HomeWidgetsSection';
-import { ResourceHubSection } from './components/ResourceHubSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
+import { FeaturesRow } from './components/FeaturesRow';
+import { StatsAndPartners } from './components/StatsAndPartners';
+import { ServicesGrid } from './components/ServicesGrid';
 import { CtaSection } from './components/CtaSection';
 import { Footer } from './components/Footer';
-import { QuickGpaModal } from './components/QuickGpaModal';
-import { DownloadModal } from './components/DownloadModal';
 
 export default function App() {
-  const [quickGpaOpen, setQuickGpaOpen] = useState(false);
-  const [downloadOpen, setDownloadOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0B1020] text-zinc-900 dark:text-zinc-100 selection:bg-indigo-500/30 selection:text-indigo-200 antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#0B0C10] text-zinc-100 selection:bg-[#6c35ff]/30 selection:text-indigo-200 antialiased overflow-x-hidden">
       {/* Sticky Navigation Header */}
-      <Navbar 
-        onOpenQuickGpa={() => setQuickGpaOpen(true)}
-        onOpenDownload={() => setDownloadOpen(true)}
-      />
+      <Navbar />
 
       {/* Main Page Flow */}
-      <main>
+      <main className="bg-[#0B0C10]">
         {/* Hero Section */}
-        <HeroSection 
-          onOpenQuickGpa={() => setQuickGpaOpen(true)}
-          onOpenDownload={() => setDownloadOpen(true)}
-        />
+        <HeroSection />
 
-        {/* GPA TRACKER: Calculate semester and cumulative GPA instantly */}
-        <GpaTrackerSection />
+        {/* Features Row */}
+        <FeaturesRow />
 
-        {/* ACADEMIC PLANNER: Organize tasks by date with smart weekly planner */}
-        <AcademicPlannerSection />
+        {/* Stats and Partners */}
+        <StatsAndPartners />
 
-        {/* GOAL ENGINE: Target GPA calculation and remaining course grade solver */}
-        <GoalEngineSection />
-
-        {/* SEMESTER OVERVIEW: Academic progress charts and term statistics */}
-        <SemesterOverviewSection />
-
-        {/* HOME WIDGETS: Glance at tasks and current GPA from home & lock screens */}
-        <HomeWidgetsSection />
-
-        {/* RESOURCE HUB: Curated academic resources, study tips, and templates */}
-        <ResourceHubSection />
-
-        {/* Testimonials & Top University Scholars */}
-        <TestimonialsSection />
+        {/* Services Grid */}
+        <ServicesGrid />
 
         {/* Closing Call to Action */}
-        <CtaSection 
-          onOpenQuickGpa={() => setQuickGpaOpen(true)}
-          onOpenDownload={() => setDownloadOpen(true)}
-        />
+        <CtaSection />
       </main>
 
       {/* Footer */}
       <Footer />
-
-      {/* Modals */}
-      <QuickGpaModal 
-        isOpen={quickGpaOpen}
-        onClose={() => setQuickGpaOpen(false)}
-      />
-
-      <DownloadModal 
-        isOpen={downloadOpen}
-        onClose={() => setDownloadOpen(false)}
-      />
     </div>
   );
 }

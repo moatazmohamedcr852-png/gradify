@@ -11,14 +11,9 @@ import {
 } from 'lucide-react';
 import { GradifyLogo } from './GradifyLogo';
 
-interface CtaSectionProps {
-  onOpenQuickGpa?: () => void;
-  onOpenDownload?: () => void;
-}
-
-export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenQuickGpa, onOpenDownload }) => {
+export const CtaSection: React.FC = () => {
   return (
-    <section className="py-24 bg-white dark:bg-[#0B1020] border-t border-zinc-200 dark:border-white/5 relative overflow-hidden">
+    <section className="py-24 bg-[#0B0C10] border-t border-white/5 relative overflow-hidden">
       {/* Background radial glow */}
       <div 
         aria-hidden="true" 
@@ -80,14 +75,6 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenQuickGpa, onOpenDo
                 <div>Google Play</div>
               </div>
             </a>
-
-            <button
-              onClick={onOpenQuickGpa}
-              className="px-6 py-4 rounded-2xl text-sm font-semibold text-zinc-800 dark:text-zinc-200 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:bg-white/10 border border-zinc-200 dark:border-white/10 active:scale-95 transition flex items-center gap-2"
-            >
-              <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span>Open Online GPA Calculator</span>
-            </button>
           </div>
 
           {/* Guarantee bullet points */}

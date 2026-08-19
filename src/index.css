@@ -29,7 +29,7 @@
   }
 
   .glow-purple {
-    box-shadow: 0 0 50px -10px rgba(168, 85, 247, 0.25);
+    box-shadow: 0 0 50px -10px rgba(108, 53, 255, 0.4);
   }
 
   .glow-cyan {
@@ -39,6 +39,16 @@
   .glow-indigo {
     box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.25);
   }
+
+  /* Custom Gradify Purple border glow */
+  .border-glow-purple {
+    box-shadow: 0 0 15px -3px rgba(108, 53, 255, 0.3);
+  }
+}
+
+/* Base styles for RTL */
+.rtl-text {
+  direction: rtl;
 }
 
 /* Custom sleek dark scrollbar */
