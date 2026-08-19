@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
         {/* Brand Logo */}
         <a href="#" className="flex flex-col items-start gap-0.5 group">
           <GradifyLogo size="md" withGlow={true} />
-          <span className="text-[10px] text-zinc-400 font-medium tracking-wide">جامعتك و نعللها</span>
+          <span className="text-[10px] text-zinc-400 font-medium tracking-wide">جامعتك وتعللنا</span>
         </a>
 
         {/* Desktop Navigation Links */}
