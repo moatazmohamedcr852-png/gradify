@@ -68,12 +68,15 @@ export const HeroSection: React.FC = () => {
 
             {/* Quick Action buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
-              <button
+              <a
+                href="https://linktr.ee/gradify.egypt"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group px-8 py-4 rounded-xl text-lg font-bold text-white bg-[#6c35ff] hover:opacity-95 shadow-lg shadow-[#6c35ff]/30 active:scale-95 transition-all duration-200 flex items-center gap-2"
               >
                 <span>ابدأ رحلتك مع Gradify</span>
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              </button>
+              </a>
 
               <button
                 className="px-8 py-4 rounded-xl text-lg font-semibold text-zinc-200 hover:text-white hover:bg-white/[0.05] border border-zinc-700/50 hover:border-zinc-500 active:scale-95 transition-all duration-200 flex items-center gap-3"

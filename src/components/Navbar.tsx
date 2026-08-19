@@ -80,17 +80,23 @@ export const Navbar: React.FC = () => {
 
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-3 rtl-text">
-          <button
+          <a
+            href="https://gradify-v1.vercel.app/auth/welcome/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-sm font-semibold text-zinc-200 hover:text-white hover:bg-white/[0.05] border border-zinc-700/50 hover:border-zinc-600 transition duration-200"
           >
             <span>تسجيل دخول</span>
-          </button>
+          </a>
 
-          <button
+          <a
+            href="https://linktr.ee/gradify.egypt"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative group overflow-hidden flex items-center gap-2 px-8 py-2.5 rounded-xl text-sm font-bold text-white bg-[#6c35ff] hover:opacity-95 shadow-lg shadow-[#6c35ff]/30 active:scale-95 transition duration-200"
           >
             <span>إبدأ الآن</span>
-          </button>
+          </a>
         </div>
 
         {/* Mobile menu trigger */}
@@ -124,22 +130,22 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="pt-2 flex flex-col gap-3 mt-4 border-t border-white/10 pt-4">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-              }}
+            <a
+              href="https://gradify-v1.vercel.app/auth/welcome/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-3 rounded-xl text-sm font-semibold text-zinc-200 border border-zinc-700/50 flex items-center justify-center"
             >
               تسجيل دخول
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-              }}
+            </a>
+            <a
+              href="https://linktr.ee/gradify.egypt"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-3 rounded-xl text-sm font-bold text-white bg-[#6c35ff] shadow-lg shadow-[#6c35ff]/30 flex items-center justify-center"
             >
               إبدأ الآن
-            </button>
+            </a>
           </div>
         </div>
       )}
