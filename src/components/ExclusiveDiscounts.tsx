@@ -17,7 +17,7 @@ export const ExclusiveDiscounts: React.FC = () => {
       description: 'Build • Code • Create',
       icon: Code2,
       courses: ['Programming Fundamentals', 'Web Development', 'Game Development'],
-      image: '/mind_craft/mindcraft-logo.png',
+      image: '/mind_craft.jpeg',
     },
     {
       id: 2,
@@ -70,8 +70,19 @@ export const ExclusiveDiscounts: React.FC = () => {
             return (
               <div
                 key={course.id}
-                className="group relative rounded-2xl bg-gradient-to-br from-[#1a1d2e] to-[#0f1119] border border-white/10 hover:border-[#6c35ff]/50 p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6c35ff]/20"
+                className="group relative rounded-2xl bg-gradient-to-br from-[#1a1d2e] to-[#0f1119] border border-white/10 hover:border-[#6c35ff]/50 p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6c35ff]/20 overflow-hidden"
               >
+                {/* Image Section */}
+                {course.image && (
+                  <div className="mb-6 rounded-xl overflow-hidden h-40 bg-gradient-to-br from-[#6c35ff]/20 to-transparent flex items-center justify-center">
+                    <img
+                      src={course.image}
+                      alt={course.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+
                 {/* Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#6c35ff]/10 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
 

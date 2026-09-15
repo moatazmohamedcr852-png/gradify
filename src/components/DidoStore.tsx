@@ -21,6 +21,7 @@ export const DidoStore: React.FC = () => {
         'شوكة رنانة (Tuning Fork)',
       ],
       description: 'جاهز للراوندات والعملي من أول يوم!',
+      image: null,
       color: 'from-blue-600/20 to-blue-900/20',
       borderColor: 'border-blue-600/50',
       buttonColor: 'bg-blue-600 hover:bg-blue-700',
@@ -40,6 +41,7 @@ export const DidoStore: React.FC = () => {
         'أدوات أساسية للورش',
       ],
       description: 'هديتنا ليك: نظارة حماية هندسية مجاناً! 🥽',
+      image: '/engineering box.jpeg',
       color: 'from-amber-600/20 to-yellow-900/20',
       borderColor: 'border-amber-600/50',
       buttonColor: 'bg-amber-600 hover:bg-amber-700',
@@ -59,6 +61,7 @@ export const DidoStore: React.FC = () => {
         'توصيل مجاني',
       ],
       description: 'اطلب انت وصاحبك 2 بالطو واستفيدوا بخصم 10% ليكم إنتوا الاتنين',
+      image: null,
       color: 'from-purple-600/20 to-pink-900/20',
       borderColor: 'border-purple-600/50',
       buttonColor: 'bg-purple-600 hover:bg-purple-700',
@@ -108,6 +111,17 @@ export const DidoStore: React.FC = () => {
                 className={`group relative rounded-2xl bg-gradient-to-br ${box.color} border ${box.borderColor} p-8 transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-[#6c35ff]/20 overflow-hidden`}
                 onClick={() => setExpandedBox(isExpanded ? null : box.id)}
               >
+                {/* Image Section */}
+                {box.image && (
+                  <div className="mb-6 rounded-xl overflow-hidden h-40 bg-gradient-to-br from-[#6c35ff]/20 to-transparent flex items-center justify-center">
+                    <img
+                      src={box.image}
+                      alt={box.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -163,6 +177,35 @@ export const DidoStore: React.FC = () => {
           })}
         </div>
 
+        {/* Dido Store Dragon Badge - 3D Printing */}
+        <div className="mb-20 rounded-2xl overflow-hidden bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-600/50 p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center rtl-text">
+            <div className="order-2 md:order-1">
+              <h3 className="text-3xl font-bold text-white mb-4">Neon Dido Store</h3>
+              <p className="text-zinc-300 mb-2">خدمة الطباعة ثلاثية الأبعاد</p>
+              <p className="text-sm text-zinc-400 mb-6">احصل على تصاميمك الخاصة مطبوعة بتقنية 3D بأعلى جودة وأسرع وقت</p>
+              <a
+                href="https://wa.me/201009744593"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold transition-all duration-300"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>01009744593</span>
+              </a>
+            </div>
+            <div className="order-1 md:order-2 flex justify-center">
+              <div className="rounded-xl overflow-hidden h-64 w-full max-w-sm bg-gradient-to-br from-purple-600/10 to-pink-600/10 flex items-center justify-center">
+                <img
+                  src="/Neon Dido Store Dragon Badge (1).png"
+                  alt="Dido Store Dragon Badge"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Special Offers */}
         <div className="mb-20 rtl-text">
           <h3 className="text-3xl font-bold text-white mb-8 text-center">عروض خاصة 🔥</h3>
@@ -198,7 +241,7 @@ export const DidoStore: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href={whatsappLinks.didoStore}
+              href="https://wa.me/201009744593"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-8 py-4 rounded-xl bg-green-600/20 border border-green-600/50 hover:bg-green-600/30 transition-all duration-300 group"
@@ -211,7 +254,7 @@ export const DidoStore: React.FC = () => {
             </a>
 
             <a
-              href={whatsappLinks.doctorsBox}
+              href="https://wa.me/201142669070"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-8 py-4 rounded-xl bg-green-600/20 border border-green-600/50 hover:bg-green-600/30 transition-all duration-300 group"
