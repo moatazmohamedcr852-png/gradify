@@ -18,6 +18,7 @@ export const ExclusiveDiscounts: React.FC = () => {
       icon: Code2,
       courses: ['Programming Fundamentals', 'Web Development', 'Game Development'],
       image: '/mind_craft.jpeg',
+      badge: '🔧 Mindcraft',
     },
     {
       id: 2,
@@ -25,6 +26,8 @@ export const ExclusiveDiscounts: React.FC = () => {
       description: 'Master modern C++ programming',
       icon: Code2,
       courses: ['C++ Basics', 'Advanced C++', 'Competitive Programming'],
+      image: '/mind_craft.jpeg',
+      badge: '🔧 Mindcraft',
     },
     {
       id: 3,
@@ -32,6 +35,8 @@ export const ExclusiveDiscounts: React.FC = () => {
       description: 'Internet of Things Development',
       icon: Cpu,
       courses: ['Arduino Basics', 'Smart Home Projects', 'IoT Systems'],
+      image: '/mind_craft.jpeg',
+      badge: '🔧 Mindcraft',
     },
     {
       id: 4,
@@ -39,6 +44,8 @@ export const ExclusiveDiscounts: React.FC = () => {
       description: '3D Design & CAD',
       icon: Wrench,
       courses: ['Basic 3D Modeling', 'Advanced Assembly', 'Technical Drawings'],
+      image: '/mind_craft.jpeg',
+      badge: '🔧 Mindcraft',
     },
     {
       id: 5,
@@ -46,6 +53,8 @@ export const ExclusiveDiscounts: React.FC = () => {
       description: 'Circuit Board Design',
       icon: Zap,
       courses: ['Circuit Design', 'PCB Layout', 'Manufacturing Basics'],
+      image: '/mind_craft.jpeg',
+      badge: '🔧 Mindcraft',
     },
   ];
 
@@ -72,6 +81,11 @@ export const ExclusiveDiscounts: React.FC = () => {
                 key={course.id}
                 className="group relative rounded-2xl bg-gradient-to-br from-[#1a1d2e] to-[#0f1119] border border-white/10 hover:border-[#6c35ff]/50 p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6c35ff]/20 overflow-hidden"
               >
+                {/* Badge */}
+                <div className="absolute top-4 right-4 z-20 bg-[#6c35ff]/80 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-white">
+                  {course.badge}
+                </div>
+
                 {/* Image Section */}
                 {course.image && (
                   <div className="mb-6 rounded-xl overflow-hidden h-40 bg-gradient-to-br from-[#6c35ff]/20 to-transparent flex items-center justify-center">
