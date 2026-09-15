@@ -12,7 +12,8 @@ import {
   X,
   Sparkles,
   Sun,
-  Moon
+  Moon,
+  Zap
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -43,6 +44,7 @@ export const Navbar: React.FC = () => {
     { label: 'تواصل معنا', href: '#contact' },
     { label: 'شركاؤنا', href: '#partners' },
     { label: 'الأسعار', href: '#pricing' },
+    { label: 'خصومات حصريه', href: '#exclusive-discounts', icon: Sparkles },
     { label: 'إيه اللي نساعدك فيه؟', href: '#help' },
     { label: 'المميزات', href: '#features' },
   ];
@@ -66,12 +68,16 @@ export const Navbar: React.FC = () => {
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-6 px-3 py-1.5 rtl-text">
           {navLinks.map((link) => {
+            const IconComponent = link.icon;
             return (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-zinc-300 hover:text-white transition-colors"
+                className="flex items-center gap-1.5 text-sm font-medium text-zinc-300 hover:text-white transition-colors group"
               >
+                {IconComponent && (
+                  <IconComponent className="w-4 h-4 text-[#6c35ff] group-hover:animate-pulse" />
+                )}
                 {link.label}
               </a>
             );
@@ -84,7 +90,7 @@ export const Navbar: React.FC = () => {
             href="https://gradify-v1.vercel.app/auth/welcome/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-sm font-semibold text-zinc-200 hover:text-white hover:bg-white/[0.05] border border-zinc-700/50 hover:border-zinc-600 transition duration-200"
+            className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-sm font-semibold text-zinc-200 hover:text-white hover:bg-white/[0.05] border border-zinc-700/50 hover:border-zinc-600 transition-all duration-300"
           >
             <span>تسجيل دخول</span>
           </a>
@@ -93,9 +99,10 @@ export const Navbar: React.FC = () => {
             href="https://linktr.ee/gradify.egypt"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group overflow-hidden flex items-center gap-2 px-8 py-2.5 rounded-xl text-sm font-bold text-white bg-[#6c35ff] hover:opacity-95 shadow-lg shadow-[#6c35ff]/30 active:scale-95 transition duration-200"
+            className="relative group overflow-hidden flex items-center gap-2 px-8 py-2.5 rounded-xl text-sm font-bold text-white bg-[#6c35ff] hover:opacity-95 shadow-lg shadow-[#6c35ff]/30 transition-all duration-300"
           >
             <span>إبدأ الآن</span>
+            <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
@@ -116,13 +123,17 @@ export const Navbar: React.FC = () => {
         <div className="lg:hidden bg-[#0A0C10]/95 backdrop-blur-2xl border-b border-white/10 px-4 pt-3 pb-6 space-y-3 mt-2 animate-in slide-in-from-top-4 duration-200 rtl-text">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => {
+              const IconComponent = link.icon;
               return (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center p-3 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10"
+                  className="flex items-center gap-2 p-3 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10"
                 >
+                  {IconComponent && (
+                    <IconComponent className="w-4 h-4 text-[#6c35ff]" />
+                  )}
                   <span>{link.label}</span>
                 </a>
               );

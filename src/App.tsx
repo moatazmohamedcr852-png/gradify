@@ -4,6 +4,8 @@ import { HeroSection } from './components/HeroSection';
 import { FeaturesRow } from './components/FeaturesRow';
 import { StatsAndPartners } from './components/StatsAndPartners';
 import { ServicesGrid } from './components/ServicesGrid';
+import { ExclusiveDiscounts } from './components/ExclusiveDiscounts';
+import { DidoStore } from './components/DidoStore';
 import { CtaSection } from './components/CtaSection';
 import { Footer } from './components/Footer';
 
@@ -26,6 +28,12 @@ export default function App() {
 
         {/* Services Grid */}
         <ServicesGrid />
+
+        {/* Exclusive Discounts Section */}
+        <ExclusiveDiscounts />
+
+        {/* Dido Store Section */}
+        <DidoStore />
 
         {/* Closing Call to Action */}
         <CtaSection />
