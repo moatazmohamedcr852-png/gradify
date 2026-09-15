@@ -57,13 +57,13 @@ export const Navbar: React.FC = () => {
   const socialLinks = [
     { 
       icon: Facebook, 
-      href: 'https://facebook.com/gradify.egypt',
+      href: 'https://www.facebook.com/gradify.egypt',
       label: 'Facebook',
       color: 'hover:text-blue-600 hover:bg-blue-600/20'
     },
     { 
       icon: Instagram, 
-      href: 'https://instagram.com/gradify.egypt',
+      href: 'https://www.instagram.com/gradify.egypt',
       label: 'Instagram',
       color: 'hover:text-pink-600 hover:bg-pink-600/20'
     },
@@ -75,13 +75,13 @@ export const Navbar: React.FC = () => {
     },
     { 
       icon: Linkedin, 
-      href: 'https://linkedin.com/company/gradify',
+      href: 'https://www.linkedin.com/company/gradify-egypt',
       label: 'LinkedIn',
       color: 'hover:text-blue-500 hover:bg-blue-500/20'
     },
     { 
       icon: Youtube, 
-      href: 'https://youtube.com/@gradify',
+      href: 'https://www.youtube.com/@gradify.egypt',
       label: 'YouTube',
       color: 'hover:text-red-600 hover:bg-red-600/20'
     },
