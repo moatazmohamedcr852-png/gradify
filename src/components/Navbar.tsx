@@ -57,13 +57,13 @@ export const Navbar: React.FC = () => {
   const socialLinks = [
     { 
       icon: Facebook, 
-      href: 'https://www.facebook.com/gradify.egypt',
+      href: 'https://facebook.com/share/1CzjMcZCYc/?mibextid=wwXIfr',
       label: 'Facebook',
       color: 'hover:text-blue-600 hover:bg-blue-600/20'
     },
     { 
       icon: Instagram, 
-      href: 'https://www.instagram.com/gradify.egypt',
+      href: 'https://www.instagram.com/gradify.eg?igsh=MzA1NXZwcDc2Z3pl',
       label: 'Instagram',
       color: 'hover:text-pink-600 hover:bg-pink-600/20'
     },
